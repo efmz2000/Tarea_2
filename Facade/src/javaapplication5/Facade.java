@@ -14,33 +14,34 @@ import listas.DoubleEndedLinkedList;
 public class Facade {
     public Facade(String Nombre, String operacion){
         DoubleEndedLinkedList<Cliente> lista= new Clientes().getlista();
-        System.out.println(lista);
         int len=lista.len();
         int contador=0;
         Cliente cliente;
-        while(contador<len){            
-            if(Nombre.equals(lista.getNodo(contador).getDato().getNombre())){
-                cliente=lista.getNodo(contador).getDato();
-                Operaciones operar= new Operaciones();
-                if(operacion.equals("retiro")){
-                    operar.deposito(cliente, len);
-                }
-                if(operacion.equals("saldo")){
-                    operar.verSaldo(cliente);
-
-                }
-                if(operacion.equals("deposito")){
-                    operar.retiro(cliente, len);
-                }
-
-                break;
-                }
-            else{
-                contador++;
+        Verificar verificador=new Verificar();
+        if(verificador.Verificar(lista,Nombre)){            
+           
+            cliente=lista.getNodo(contador).getDato();
+            Operaciones operar= new Operaciones();
+            if(operacion=="retiro"){
+                operar.retiro(cliente, (int) (Math.random() * 500000) + 1);
+                return;
             }
-        System.out.println("Usted no es uno de nuestros clientes");           
+            if(operacion=="saldo"){
+                operar.verSaldo(cliente);
+                return;
+
+            }
+            if(operacion=="deposito"){
+                operar.deposito(cliente,(int) (Math.random() * 5000) + 1);
+                return;
+            }
+            System.out.println("Esa operación no esta permitida");
+            return;
         }
+        System.out.println("Usted no es uno de nuestros clientes");
+    }    
+               
         
-    }
+   
     
 }
