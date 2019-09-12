@@ -8,7 +8,7 @@ package observer;
 
 /**
  *
- * @author Jafet
+ * @author Dixon
  */
 public class Tarea2Observer {
     
@@ -24,16 +24,11 @@ public class Tarea2Observer {
      *
      */
       Employe juan= new Employe();
-      Boss jose= new Boss();
-      jose.setEmpleado(juan);
-      juan.setBoss(jose);
-      
-      juan.printear();
-   //   DoubleEndedLinkedList<String> listofBoss = juan.getListofBoss();
+      Boss jose= new Boss(juan);
+      juan.setWorking(True);
 
-    /**
-     *
-     */
+      
+
 
 
       
