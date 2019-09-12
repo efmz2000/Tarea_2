@@ -21,19 +21,13 @@ public class Tarea2Observer {
 
 
     /**
-     *
+     *crea los objetos jefe y empleado 
+     * ejecuta el metodo sobre el empleado que activa la notificacion a los  (observer) los jefes.
      */
       Employe juan= new Employe();
       Boss jose= new Boss(juan);
       juan.setWorking(True);
-
-      
-
-
-
-      
-    
-       
+   
      
     }
 }
