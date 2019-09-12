@@ -9,7 +9,7 @@ import Lista.*;
 
 /**
  *
- * @author Jafet
+ * @author Dixon
  */
 public class Employe {
     private boolean working;
@@ -38,13 +38,11 @@ public class Employe {
     /**
      *avisa a todos los jefes la accion que  realice
      */
-    public void tell_all_boss(){
+    private void tell_all_boss(){
           for (int i=0; i<getQuantityBoss(); i++){
-           System.out.println(this.getListofBoss().getNodo(i).getDato());
+           this.listofBoss().getNodo(i).getDato().Notify();
         }
-       // listofBoss.forEach((boss) -> {
-       //     boss.Notify();
-        //});
+
     }   
 
     /**
@@ -53,7 +51,5 @@ public class Employe {
     public int getQuantityBoss() {
         return quantityBoss;
     }
-
-
-    
+   
 }
