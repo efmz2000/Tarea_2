@@ -12,31 +12,17 @@ import Lista.*;
  * @author Jafet
  */
 public class Employe {
-    /**
-     *
-     */
-  
-   // private List<Boss> listofBoss = new ArrayList<>();
     private boolean working;
     private int quantityBoss;
     private  DoubleEndedLinkedList<Boss> listofBoss; 
     
 
-     public void Employe(){
-       listofBoss = new DoubleEndedLinkedList(); 
-        
-    }
-    public DoubleEndedLinkedList<Boss> getListofBoss() {
-        return listofBoss;
-        
-    }
-
-    public void printear (){      
-        this.listofBoss.print();
+     public  Employe(){
+       listofBoss = new DoubleEndedLinkedList();       
     }
     
     public void setBoss(Boss boss){
-        this.listofBoss.add(boss); //*esta es la unica parte que  me da problemas*/
+        this.listofBoss.add(boss); 
         this.quantityBoss++;
     } 
     
